@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Registrar Compra</h2>
+<form method="POST" enctype="multipart/form-data">
+    <label>Nombre de quien compró:</label>
+    <input type="text" name="quien" class="form-control mb-2" required>
+    <label>Obra:</label>
+    <select name="obra_id" class="form-control mb-2" required>
+        {% for obra in obras %}
+            <option value="{{ obra['id'] }}">{{ obra['nombre'] }}</option>
+        {% endfor %}
+    </select>
+    <label>Foto del ticket:</label>
+    <input type="file" name="ticket_foto" class="form-control mb-2" accept="image/*" required>
+    <label>Foto del lugar donde se dejó:</label>
+    <input type="file" name="ubicacion_foto" class="form-control mb-2" accept="image/*" required>
+    <label>Descripción:</label>
+    <textarea name="descripcion" class="form-control mb-2"></textarea>
+    <button class="btn btn-danger">Registrar</button>
+</form>
+{% endblock %}

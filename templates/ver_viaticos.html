@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>📋 Lista de Viáticos</h2>
+  <a href="{{ url_for('nuevo_viatico') }}" class="btn btn-success mb-3">➕ Registrar Viático</a>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Empleado</th>
+        <th>Obra</th>
+        <th>Concepto</th>
+        <th>Monto</th>
+        <th>Fecha</th>
+        <th>Observación</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for v in viaticos %}
+      <tr>
+        <td>{{ v[1] }}</td>
+        <td>{{ v[2] or 'Sin obra' }}</td>
+        <td>{{ v[3] }}</td>
+        <td>${{ v[4] }}</td>
+        <td>{{ v[5] }}</td>
+        <td>{{ v[6] or '' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

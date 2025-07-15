@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>{{ area and 'Editar' or 'Nueva' }} Área de Trabajo</h2>
+<form method="POST">
+    <input type="text" name="nombre" placeholder="Nombre del área" class="form-control mb-2" value="{{ area['nombre'] if area else '' }}" required>
+    <select name="obra_id" class="form-control mb-2" required>
+        <option value="">Seleccione la obra</option>
+        {% for o in obras %}
+            <option value="{{ o['id'] }}" {% if area and area['obra_id'] == o['id'] %}selected{% endif %}>{{ o['nombre'] }}</option>
+        {% endfor %}
+    </select>
+    <textarea name="checklist" class="form-control mb-2" placeholder="Checklist (una tarea por línea)" rows="5" required>{{ area['checklist'] if area else '' }}</textarea>
+    <button class="btn btn-danger">Guardar</button>
+</form>
+{% endblock %}

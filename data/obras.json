@@ -1,0 +1,16 @@
+[
+  {
+    "nombre": "Obra Norte",
+    "estado": "activa",
+    "progreso": 30,
+    "fecha_inicio": "2025-06-01",
+    "fecha_cierre": ""
+  },
+  {
+    "nombre": "Obra Sur",
+    "estado": "inactiva",
+    "progreso": 100,
+    "fecha_inicio": "2025-05-01",
+    "fecha_cierre": "2025-07-01"
+  }
+]

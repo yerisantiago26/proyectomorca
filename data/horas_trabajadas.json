@@ -1,0 +1,202 @@
+[
+    {
+        "nombre": "santiago",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Obra Norte",
+        "horas": 8.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "santiago",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Obra Norte",
+        "horas": 7.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "camilo",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Obra Sur",
+        "horas": 6.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "andres",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Obra Norte",
+        "horas": 7.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "sofia",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Bodega Central",
+        "horas": 6.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "elena",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Obra Sur",
+        "horas": 4.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "milton",
+        "fecha": "2025-07-05",
+        "dia": "viernes",
+        "lugar": "Obra Norte",
+        "horas": 9.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "santiago",
+        "fecha": "2025-07-05",
+        "dia": "sábado",
+        "lugar": "Obra Norte",
+        "horas": 8.0,
+        "pago_siguiente_semana": true
+    },
+    {
+        "nombre": "camilo",
+        "fecha": "2025-07-05",
+        "dia": "sábado",
+        "lugar": "Obra Sur",
+        "horas": 5.0,
+        "pago_siguiente_semana": true
+    },
+    {
+        "nombre": "camilo",
+        "fecha": "2025-07-05",
+        "dia": "sábado",
+        "lugar": "Obra Sur",
+        "horas": 3.0,
+        "pago_siguiente_semana": true
+    },
+    {
+        "nombre": "natalia",
+        "fecha": "2025-07-05",
+        "dia": "sábado",
+        "lugar": "Bodega Central",
+        "horas": 6.0,
+        "pago_siguiente_semana": true
+    },
+    {
+        "nombre": "natalia",
+        "fecha": "2025-07-05",
+        "dia": "sábado",
+        "lugar": "Obra Norte",
+        "horas": 3.0,
+        "pago_siguiente_semana": true
+    },
+    {
+        "nombre": "santiago",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Obra Sur",
+        "horas": 5.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "camilo",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Bodega Central",
+        "horas": 7.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "natalia",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Obra Sur",
+        "horas": 7.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "elena",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Obra Sur",
+        "horas": 9.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "andres",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Obra Norte",
+        "horas": 7.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "andres",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Obra Sur",
+        "horas": 6.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "andres",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Bodega Central",
+        "horas": 5.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "santiago",
+        "fecha": "2025-07-06",
+        "dia": "domingo",
+        "lugar": "Obra Sur",
+        "horas": 4.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "santiago",
+        "fecha": "2025-07-07",
+        "dia": "lunes",
+        "lugar": "Obra Norte",
+        "horas": 8.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "camilo",
+        "fecha": "2025-07-07",
+        "dia": "lunes",
+        "lugar": "Bodega Central",
+        "horas": 8.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "jesus rangel",
+        "fecha": "2025-07-07",
+        "dia": "lunes",
+        "lugar": "Obra Norte",
+        "horas": 8.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "carlos morales",
+        "fecha": "2025-07-07",
+        "dia": "lunes",
+        "lugar": "Bodega Central",
+        "horas": 9.0,
+        "pago_siguiente_semana": false
+    },
+    {
+        "nombre": "sara",
+        "fecha": "2025-07-07",
+        "dia": "lunes",
+        "lugar": "Obra Norte",
+        "horas": 8.0,
+        "pago_siguiente_semana": false
+    }
+]

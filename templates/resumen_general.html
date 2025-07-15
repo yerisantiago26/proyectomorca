@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Resumen General de Empleados</h2>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Área</th>
+                <th>Estado</th>
+                <th>Total horas</th>
+                {% if puede_ver_precio %}<th>Precio/hora</th><th>Salario total</th>{% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row['nombre'] }}</td>
+                <td>{{ row['area'] }}</td>
+                <td>{{ row['estado'] }}</td>
+                <td>{{ row['total_horas'] }}</td>
+                {% if puede_ver_precio %}
+                <td>${{ "%.2f"|format(row['precio_hora']|float) }}</td>
+                <td>${{ "%.2f"|format(row['total_salario']|float) }}</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

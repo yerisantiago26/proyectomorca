@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>{{ user and 'Editar' or 'Nuevo' }} Usuario</h2>
+<form method="POST">
+    <input type="text" name="usuario" placeholder="Usuario" class="form-control mb-2" value="{{ user['usuario'] if user else '' }}" required>
+    <input type="password" name="clave" placeholder="Contraseña" class="form-control mb-2" value="{{ user['clave'] if user else '' }}" required>
+    <select name="rol" class="form-control mb-2" required>
+        <option value="">Seleccione rol</option>
+        <option value="universal" {% if user and user['rol']=='universal' %}selected{% endif %}>Universal (admin)</option>
+        <option value="estandar" {% if user and user['rol']=='estandar' %}selected{% endif %}>Estándar</option>
+        <option value="jefe_obra" {% if user and user['rol']=='jefe_obra' %}selected{% endif %}>Jefe de Obra</option>
+    </select>
+    <button class="btn btn-danger">Guardar</button>
+</form>
+{% endblock %}

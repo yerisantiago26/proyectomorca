@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Editar Empleado</h2>
+    <form method="POST" enctype="multipart/form-data">
+        <input type="text" name="nombre" class="form-control" value="{{ emp['nombre'] }}" required>
+        <input type="text" name="area" class="form-control" value="{{ emp['area'] }}" required>
+        <input type="text" name="sangre" class="form-control" value="{{ emp['sangre'] }}" required>
+        <textarea name="nota" class="form-control">{{ emp['nota'] }}</textarea>
+        <select name="estado" class="form-control" required>
+            <option value="activo" {% if emp['estado']=='activo' %}selected{% endif %}>Activo</option>
+            <option value="inactivo" {% if emp['estado']=='inactivo' %}selected{% endif %}>Inactivo</option>
+        </select>
+        {% if session['rol'] in ['universal', 'estandar'] %}
+        <input type="number" name="precio_hora" step="0.01" class="form-control" value="{{ emp['precio_hora'] }}" required>
+        {% endif %}
+        <label>Actualizar foto:</label>
+        <input type="file" name="foto" class="form-control">
+        <button class="btn-main" style="margin-top:12px;">Guardar Cambios</button>
+    </form>
+</div>
+{% endblock %}

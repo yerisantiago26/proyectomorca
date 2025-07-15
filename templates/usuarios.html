@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>👥 Gestión de Usuarios</h2>
+  <a href="{{ url_for('crear_usuario') }}" class="btn btn-success mb-3">➕ Nuevo Usuario</a>
+  <table class="table table-bordered table-hover">
+    <thead class="table-dark">
+      <tr>
+        <th>Nombre</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for u in usuarios %}
+      <tr>
+        <td>{{ u[1] }}</td>
+        <td>{{ u[2] }}</td>
+        <td>
+          <a href="{{ url_for('editar_usuario', id=u[0]) }}" class="btn btn-warning btn-sm">✏️ Editar</a>
+          <a href="{{ url_for('eliminar_usuario', id=u[0]) }}" class="btn btn-danger btn-sm" onclick="return confirm('¿Eliminar este usuario?')">🗑️ Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>➕ Registrar Nuevo Material o Equipo</h2>
+  <form method="POST" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label class="form-label">Nombre</label>
+      <input type="text" name="nombre" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Descripción</label>
+      <textarea name="descripcion" class="form-control" rows="3"></textarea>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Cantidad</label>
+      <input type="number" name="cantidad" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Categoría</label>
+      <input type="text" name="categoria" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Obra (opcional)</label>
+      <select name="obra" class="form-select">
+        <option value="">Sin asignar</option>
+        {% for obra in obras %}
+        <option value="{{ obra[0] }}">{{ obra[1] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Foto</label>
+      <input type="file" name="foto" class="form-control" required>
+    </div>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+    <a href="{{ url_for('inventario') }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

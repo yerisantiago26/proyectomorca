@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% block title %}Login - MORCA{% endblock %}
+{% block content %}
+<div class="login-container">
+    <div class="login-box">
+        <img src="{{ url_for('static', filename='img/morca_blanco.png') }}" alt="Logo Morca" class="logo">
+        <h2>GESTIÓN EMPRESARIAL MORCA</h2>
+        <form method="post">
+            <label for="username">Usuario</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">Contraseña</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Ingresar</button>
+        </form>
+        <p class="footer">Elaborado por B26</p>
+    </div>
+</div>
+{% endblock %}

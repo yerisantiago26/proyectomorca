@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}📦 Inventario General{% endblock %}
+
+{% block content %}
+<h2 class="mb-4 text-center">📦 Inventario General</h2>
+
+<div class="d-flex justify-content-end mb-3">
+  <a href="{{ url_for('nuevo_inventario') }}" class="btn btn-success">
+    ➕ Registrar nuevo ítem
+  </a>
+</div>
+
+{% if inventario %}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+  {% for item in inventario %}
+    <div class="col">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ url_for('static', filename='uploads/inventario/' ~ item.foto) }}"
+             class="card-img-top" alt="Foto de {{ item.nombre }}"
+             style="height: 200px; object-fit: cover;">
+        <div class="card-body">
+          <h5 class="card-title">{{ item.nombre }}</h5>
+          <p class="card-text small">{{ item.descripcion }}</p>
+          <span class="badge bg-info text-dark">{{ item.categoria or "Sin categoría" }}</span>
+          <span class="badge bg-secondary float-end">x{{ item.cantidad }}</span>
+        </div>
+        <div class="card-footer text-center small text-muted">
+          Código: {{ item.codigo }}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-warning text-center">
+  No hay ítems registrados en el inventario aún.
+</div>
+{% endif %}
+{% endblock %}

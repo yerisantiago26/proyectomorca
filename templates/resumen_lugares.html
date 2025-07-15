@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Resumen por Lugar - Númeo{% endblock %}
+
+{% block content %}
+<h2 class="text-center mb-4">📍 Horas trabajadas por lugar</h2>
+
+<div class="row g-4">
+  {% for lugar, datos in resumen.items() %}
+    <div class="col-md-6">
+      <div class="card shadow-sm border-info">
+        <div class="card-header bg-info text-white d-flex justify-content-between align-items-center">
+          <strong>{{ lugar }}</strong>
+          <span class="badge bg-light text-dark">{{ datos.total_horas }} h</span>
+        </div>
+        <ul class="list-group list-group-flush">
+          {% for empleado, horas in datos.empleados.items() %}
+            <li class="list-group-item d-flex justify-content-between">
+              <span>{{ empleado|capitalize }}</span>
+              <span>{{ horas }} h</span>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

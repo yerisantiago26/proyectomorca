@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>{{ emp and 'Editar' or 'Nuevo' }} Empleado</h2>
+<form method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" class="form-control mb-2" value="{{ emp['nombre'] if emp else '' }}" required>
+    <input type="text" name="area" placeholder="Área" class="form-control mb-2" value="{{ emp['area'] if emp else '' }}" required>
+    <select name="estado" class="form-control mb-2">
+        <option value="activo" {% if emp and emp['estado']=='activo' %}selected{% endif %}>Activo</option>
+        <option value="inactivo" {% if emp and emp['estado']=='inactivo' %}selected{% endif %}>Inactivo</option>
+    </select>
+    <input type="number" name="precio_hora" step="0.01" placeholder="Precio por hora" class="form-control mb-2" value="{{ emp['precio_hora'] if emp else '' }}" required>
+    <button class="btn btn-danger">Guardar</button>
+</form>
+{% endblock %}

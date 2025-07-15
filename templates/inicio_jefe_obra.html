@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="panel-jefe fade-in">
+  <!-- SVG decorativo -->
+  <svg class="svg-fondo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path d="M40 40 L160 40 L100 160 Z" fill="#ffffff08" />
+  </svg>
+
+  <!-- Título blanco -->
+  <h1>Registro Laboral</h1>
+
+  <!-- Botonera visual con SVG insertados -->
+  <div class="panel-botonera">
+    <!-- Registrar Horas -->
+    <a href="{{ url_for('registro_horas') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 8v5l3 3"/>
+        <path d="M12 20A8 8 0 1 0 4 12a8 8 0 0 0 8 8z"/>
+      </svg>
+      Registrar Horas
+    </a>
+
+    <!-- Registrar Compras -->
+    <a href="{{ url_for('compras') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M6 6h15l-1.5 9h-13z"/>
+        <circle cx="9" cy="21" r="1"/>
+        <circle cx="19" cy="21" r="1"/>
+      </svg>
+      Registrar Compras
+    </a>
+
+    <!-- Registro Áreas -->
+    <a href="{{ url_for('registro_areas') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      Registro Áreas
+    </a>
+
+    <!-- Resumen Individual -->
+    <a href="{{ url_for('resumen_individual', empleado_id=session.get('empleado_id')) }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1"/>
+      </svg>
+      Resumen Individual
+    </a>
+
+    <!-- Notificaciones -->
+    <a href="{{ url_for('notificaciones') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 22c1.1 0 2-.9 2-2h-4a2 2 0 0 0 2 2zm6-6V9a6 6 0 0 0-12 0v7H4v2h16v-2h-2z"/>
+      </svg>
+      Notificaciones
+    </a>
+
+    <!-- Dashboard -->
+    <a href="{{ url_for('dashboard') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8v-10h-8v10zm0-18v6h8V3h-8z"/>
+      </svg>
+      Dashboard
+    </a>
+  </div>
+</div>
+{% endblock %}

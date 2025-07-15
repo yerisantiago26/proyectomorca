@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="panel-jefe fade-in">
+  <svg class="svg-fondo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path d="M40 40 L160 40 L100 160 Z" fill="#ffffff08" />
+  </svg>
+
+  <h1>Panel de Control</h1>
+
+  <div class="panel-botonera">
+
+    <a href="{{ url_for('panel_configuracion') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7z"/>
+        <path d="M19.4 15a1.6 1.6 0 0 0 0-6l-1.3-.8a6.7 6.7 0 0 0-1.6-2.8l-.8-1.3a1.6 1.6 0 0 0-6 0l-.8 1.3a6.7 6.7 0 0 0-1.6 2.8l-1.3.8a1.6 1.6 0 0 0 0 6l1.3.8a6.7 6.7 0 0 0 1.6 2.8l.8 1.3a1.6 1.6 0 0 0 6 0l.8-1.3a6.7 6.7 0 0 0 1.6-2.8z"/>
+      </svg>
+      Panel Configuración
+    </a>
+
+    <a href="{{ url_for('registro_empleado') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5z"/>
+        <path d="M2 20v-1a6 6 0 0 1 6-6h8a6 6 0 0 1 6 6v1"/>
+      </svg>
+      Nuevo Empleado
+    </a>
+
+    <a href="{{ url_for('registro_obra') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M12 2v20M2 12h20"/>
+      </svg>
+      Nueva Obra
+    </a>
+
+    <!-- Reutilizar botones anteriores -->
+    <a href="{{ url_for('resumen_general') }}" class="boton-panel">Resumen General</a>
+    <a href="{{ url_for('dashboard') }}" class="boton-panel">Dashboard</a>
+    <a href="{{ url_for('notificaciones') }}" class="boton-panel">Notificaciones</a>
+  </div>
+</div>
+{% endblock %}

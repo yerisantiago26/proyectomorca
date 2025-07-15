@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block contenido %}
+<div class="panel-jefe fade-in">
+  <svg class="svg-fondo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+    <path d="M40 40 L160 40 L100 160 Z" fill="#ffffff08" />
+  </svg>
+
+  <h1>Resumen de Actividades</h1>
+
+  <div class="panel-botonera">
+    <a href="{{ url_for('resumen_general') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4 6h16M4 12h16M4 18h16"/>
+      </svg>
+      Resumen General
+    </a>
+
+    <a href="{{ url_for('resumen_filtrado') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M5 4h14v2H5zm0 7h14v2H5zm0 7h14v2H5z"/>
+      </svg>
+      Resumen Filtrado
+    </a>
+
+    <a href="{{ url_for('empleados') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 20v-1a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v1"/>
+      </svg>
+      Empleados
+    </a>
+
+    <a href="{{ url_for('obras') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4z"/>
+        <path d="M9 4v16M15 4v16M4 9h16M4 15h16"/>
+      </svg>
+      Obras y Lugares
+    </a>
+
+    <a href="{{ url_for('dashboard') }}" class="boton-panel">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M3 13h8V3H3zm0 8h8v-6H3zm10 0h8V11h-8zm0-18v6h8V3z"/>
+      </svg>
+      Dashboard
+    </a>
+  </div>
+</div>
+{% endblock %}

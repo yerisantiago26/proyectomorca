@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Editar Área</h2>
+    <form method="POST">
+        <input type="text" name="nombre" class="form-control" value="{{ area['nombre'] }}" required>
+        <textarea name="checklist" class="form-control" required>{{ area['checklist'] }}</textarea>
+        <button class="btn-main" style="margin-top:12px;">Guardar Cambios</button>
+    </form>
+</div>
+{% endblock %}

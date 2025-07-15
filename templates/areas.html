@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Áreas de la Obra: {{ obra['nombre'] }}</h2>
+    {% if puede_editar %}
+    <a href="{{ url_for('registro_area', obra_id=obra['id']) }}" class="btn-main" style="margin-bottom:18px;">➕ Registrar Área</a>
+    {% endif %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nombre del área</th>
+                <th>Checklist</th>
+                {% if puede_editar %}<th>Acciones</th>{% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for a in areas %}
+            <tr>
+                <td>{{ a['nombre'] }}</td>
+                <td>
+                    <pre style="font-size:0.98em;">{{ a['checklist'] }}</pre>
+                </td>
+                {% if puede_editar %}
+                <td>
+                    <a href="{{ url_for('editar_area', obra_id=obra['id'], area_id=a['id']) }}" class="btn-main" style="font-size:0.9rem;">Editar</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

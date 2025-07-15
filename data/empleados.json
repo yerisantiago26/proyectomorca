@@ -1,0 +1,57 @@
+[
+    {
+        "nombre": "santiago ",
+        "area": "data",
+        "pago": 50.0
+    },
+    {
+        "nombre": "camilo",
+        "area": "chuenoso",
+        "pago": 50.0
+    },
+    {
+        "nombre": "andres",
+        "area": "pisos",
+        "pago": 70.0
+    },
+    {
+        "nombre": "sofia",
+        "area": "secretaria",
+        "pago": 40.0
+    },
+    {
+        "nombre": "elena",
+        "area": "aseo",
+        "pago": 40.0
+    },
+    {
+        "nombre": "milton",
+        "area": "pintura",
+        "pago": 70.0
+    },
+    {
+        "nombre": "paula",
+        "area": "chuenoso",
+        "pago": 100.0
+    },
+    {
+        "nombre": "Natalia",
+        "area": "data",
+        "pago": 70.0
+    },
+    {
+        "nombre": "Jesus Rangel ",
+        "area": "drywall",
+        "pago": 37.5
+    },
+    {
+        "nombre": "carlos Morales",
+        "area": "admin",
+        "pago": 50.0
+    },
+    {
+        "nombre": "sara ",
+        "area": "chisme",
+        "pago": 50.0
+    }
+]

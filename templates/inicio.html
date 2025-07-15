@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="panel-inicio">
+  <h1>Centro de Gestión Empresarial</h1>
+  <div class="botonera">
+    {% if session.rol == 'universal' %}
+      <a href="{{ url_for('empleados') }}" class="btn-main">👷 Empleados</a>
+      <a href="{{ url_for('obras') }}" class="btn-main">🏗️ Obras y Lugares</a>
+      <a href="{{ url_for('panel_configuracion') }}" class="btn-main">⚙️ Configuración</a>
+      <a href="{{ url_for('notificaciones') }}" class="btn-main">🔔 Notificaciones</a>
+      <a href="{{ url_for('nueva_notificacion') }}" class="btn-main">✉️ Nueva Notificación</a>
+      <a href="{{ url_for('resumen_general') }}" class="btn-main">📈 Resumen General</a>
+      <a href="{{ url_for('resumen_filtrado') }}" class="btn-main">🔍 Resumen Filtrado</a>
+      <a href="{{ url_for('resumen_horas') }}" class="btn-main">⏱️ Ver Horas</a>
+      <a href="{{ url_for('dashboard') }}" class="btn-main">📊 Dashboard</a>
+    {% elif session.rol == 'estandar' %}
+      <a href="{{ url_for('empleados') }}" class="btn-main">👷 Empleados</a>
+      <a href="{{ url_for('obras') }}" class="btn-main">🏗️ Obras y Lugares</a>
+      <a href="{{ url_for('nueva_notificacion') }}" class="btn-main">✉️ Nueva Notificación</a>
+      <a href="{{ url_for('resumen_general') }}" class="btn-main">📈 Resumen General</a>
+      <a href="{{ url_for('resumen_filtrado') }}" class="btn-main">🔍 Resumen Filtrado</a>
+      <a href="{{ url_for('resumen_horas') }}" class="btn-main">⏱️ Ver Horas</a>
+      <a href="{{ url_for('dashboard') }}" class="btn-main">📊 Dashboard</a>
+    {% elif session.rol == 'jefe_obra' %}
+      <a href="{{ url_for('registro_horas') }}" class="btn-main">⏱️ Registrar Horas</a>
+      <a href="{{ url_for('compras') }}" class="btn-main">🧾 Registrar Compras</a>
+      <a href="{{ url_for('nueva_notificacion') }}" class="btn-main">✉️ Nueva Notificación</a>
+      <a href="{{ url_for('resumen_horas') }}" class="btn-main">⏱️ Ver Horas</a>
+      <a href="{{ url_for('dashboard') }}" class="btn-main">📊 Dashboard</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

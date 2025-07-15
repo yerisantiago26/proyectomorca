@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Registrar Nueva Obra</h2>
+    <form method="POST">
+        <input type="text" name="nombre" class="form-control" placeholder="Nombre de la obra" required>
+        <textarea name="nota" class="form-control" placeholder="Notas de la obra"></textarea>
+        <select name="estado" class="form-control" required>
+            <option value="activa">Activa</option>
+            <option value="inactiva">Inactiva</option>
+        </select>
+        <button class="btn-main" style="margin-top:12px;">Registrar</button>
+    </form>
+</div>
+{% endblock %}

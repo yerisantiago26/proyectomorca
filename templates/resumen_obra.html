@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Resumen de Obra: {{ obra['nombre'] }}</h2>
+    <p><b>Estado:</b> {{ obra['estado'] }} | <b>Notas:</b> {{ obra['nota'] }}</p>
+    <p><b>Avance global:</b> {{ avance_porcentaje }}%</p>
+
+    <h3>Áreas involucradas</h3>
+    <ul>
+        {% for area in areas %}
+        <li><b>{{ area['nombre'] }}</b> – Checklist: {{ (area['checklist'] or '').splitlines()|length }} tareas</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Empleados asignados a esta obra</h3>
+    <ul>
+        {% for emp in empleados %}
+        <li>{{ emp['nombre'] }} ({{ emp['area'] }})</li>
+        {% endfor %}
+    </ul>
+
+    <h3>Horas y avances registrados</h3>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Empleado</th>
+                <th>Área</th>
+                <th>Horas</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for h in horas %}
+            <tr>
+                <td>{{ h['fecha'] }}</td>
+                <td>{{ h['empleado'] }}</td>
+                <td>{{ h['area'] }}</td>
+                <td>{{ h['horas'] }}</td>
+                <td>{{ h['observaciones'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h3>Compras para esta obra</h3>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Comprador</th>
+                <th>Ticket</th>
+                <th>Ubicación</th>
+                <th>Descripción</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in compras %}
+            <tr>
+                <td>{{ c['codigo'] }}</td>
+                <td>{{ c['nombre_comprador'] }}</td>
+                <td>
+                    {% if c['foto_ticket'] %}
+                        <img src="/static/uploads/facturas/{{ c['foto_ticket'] }}" width="60">
+                    {% else %}
+                        <span>Sin foto</span>
+                    {% endif %}
+                </td>
+                <td>
+                    {% if c['foto_ubicacion'] %}
+                        <img src="/static/uploads/facturas/{{ c['foto_ubicacion'] }}" width="60">
+                    {% else %}
+                        <span>Sin foto</span>
+                    {% endif %}
+                </td>
+                <td>{{ c['descripcion'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

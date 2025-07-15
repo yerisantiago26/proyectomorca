@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Nueva Notificación / Observación</h2>
+<form method="POST">
+    <input type="text" name="obra" class="form-control mb-2" placeholder="Obra (opcional)">
+    <input type="text" name="area" class="form-control mb-2" placeholder="Área (opcional)">
+    <textarea name="mensaje" class="form-control mb-2" placeholder="Mensaje u observación..." rows="4" required></textarea>
+    <button class="btn btn-danger">Enviar</button>
+</form>
+{% endblock %}

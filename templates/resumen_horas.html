@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Resumen de Horas Trabajadas</h2>
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Empleado</th>
+            <th>Obra</th>
+            <th>Área</th>
+            <th>Horas</th>
+            <th>Foto</th>
+            <th>Observaciones</th>
+            <th>Registrado por</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for h in horas %}
+        <tr>
+            <td>{{ h['fecha'] }}</td>
+            <td>{{ h['nombre_empleado'] }}</td>
+            <td>{{ h['nombre_obra'] }}</td>
+            <td>{{ h['nombre_area'] }}</td>
+            <td>{{ h['horas'] }}</td>
+            <td>
+                {% if h['foto'] %}
+                    <img src="{{ url_for('static', filename='uploads/horas/' ~ h['foto']) }}" width="60">
+                {% endif %}
+            </td>
+            <td>{{ h['observaciones'] }}</td>
+            <td>{{ h['jefe_usuario'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

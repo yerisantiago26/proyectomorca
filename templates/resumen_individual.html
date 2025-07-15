@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Resumen de {{ emp['nombre'] }}</h2>
+    <table class="table table-bordered">
+        <tr><th>Área</th><td>{{ emp['area'] }}</td></tr>
+        <tr><th>Estado</th><td>{{ emp['estado'] }}</td></tr>
+        {% if puede_ver_precio %}
+        <tr><th>Precio/hora</th><td>${{ "%.2f"|format(emp['precio_hora']|float) }}</td></tr>
+        {% endif %}
+        <tr><th>Total horas trabajadas</th><td>{{ total_horas }}</td></tr>
+        {% if puede_ver_precio %}
+        <tr><th>Salario total</th><td>${{ "%.2f"|format(total_salario|float) }}</td></tr>
+        {% endif %}
+    </table>
+    <h3>Registros de Horas</h3>
+    <table class="table table-sm">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Obra</th>
+                <th>Área</th>
+                <th>Horas</th>
+                <th>Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for h in horas %}
+            <tr>
+                <td>{{ h['fecha'] }}</td>
+                <td>{{ h['obra'] }}</td>
+                <td>{{ h['area'] }}</td>
+                <td>{{ h['horas'] }}</td>
+                <td>{{ h['observaciones'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

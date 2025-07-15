@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>➕ Crear Usuario</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Nombre</label>
+      <input name="nombre" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Contraseña</label>
+      <input name="clave" type="password" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Rol</label>
+      <select name="rol" class="form-select">
+        <option value="admin">Administrador</option>
+        <option value="operador">Operador</option>
+        <option value="pintura">Pintura</option>
+        <option value="madera">Madera</option>
+        <option value="pisos">Pisos</option>
+      </select>
+    </div>
+    <button class="btn btn-primary">Guardar</button>
+    <a href="{{ url_for('usuarios') }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

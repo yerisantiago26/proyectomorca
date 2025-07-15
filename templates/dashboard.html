@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Dashboard General</h2>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <canvas id="horasPorDia"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="rankingEmpleados"></canvas>
+        </div>
+    </div>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <canvas id="obrasEstado"></canvas>
+        </div>
+        <div class="col-md-6">
+            <canvas id="empleadosActivos"></canvas>
+        </div>
+    </div>
+</div>
+
+<!-- Incluye Chart.js desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Horas por día
+    const ctx1 = document.getElementById('horasPorDia').getContext('2d');
+    new Chart(ctx1, {
+        type: 'bar',
+        data: {
+            labels: {{ labels_dias | safe }},
+            datasets: [{
+                label: 'Horas trabajadas por día',
+                data: {{ data_dias | safe }},
+                backgroundColor: 'rgba(231, 76, 60, 0.7)',
+            }]
+        }
+    });
+
+    // Ranking empleados
+    const ctx2 = document.getElementById('rankingEmpleados').getContext('2d');
+    new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: {{ ranking_labels | safe }},
+            datasets: [{
+                label: 'Ranking Empleados (Horas)',
+                data: {{ ranking_data | safe }},
+                backgroundColor: [
+                    'rgba(52, 152, 219, 0.7)',
+                    'rgba(46, 204, 113, 0.7)',
+                    'rgba(241, 196, 15, 0.7)',
+                    'rgba(230, 126, 34, 0.7)',
+                    'rgba(155, 89, 182, 0.7)'
+                ],
+            }]
+        }
+    });
+
+    // Obras estado (activo/inactivo)
+    const ctx3 = document.getElementById('obrasEstado').getContext('2d');
+    new Chart(ctx3, {
+        type: 'bar',
+        data: {
+            labels: {{ obras_labels | safe }},
+            datasets: [{
+                label: 'Obra activa (1) / Inactiva (0)',
+                data: {{ obras_estados | safe }},
+                backgroundColor: 'rgba(26, 188, 156, 0.7)'
+            }]
+        }
+    });
+
+    // Empleados activos/inactivos
+    const ctx4 = document.getElementById('empleadosActivos').getContext('2d');
+    new Chart(ctx4, {
+        type: 'doughnut',
+        data: {
+            labels: ['Activos', 'Inactivos'],
+            datasets: [{
+                data: [{{ total_activos }}, {{ total_inactivos }}],
+                backgroundColor: ['rgba(39, 174, 96,0.7)','rgba(127,140,141,0.7)']
+            }]
+        }
+    });
+</script>
+{% endblock %}
+

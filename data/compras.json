@@ -1,0 +1,65 @@
+[
+    {
+        "codigo": "dd24dfa6",
+        "obra": "Obra A",
+        "factura": "dd24dfa6_factura.jpg",
+        "ubicacion": "dd24dfa6_ubicacion.jpg",
+        "fecha_registro": "2025-07-05 10:41:55"
+    },
+    {
+        "codigo": "90992431",
+        "empleado": "santiago",
+        "obra": "obra 1",
+        "factura": "90992431_factura.jpg",
+        "ubicacion": "90992431_ubicacion.jpg",
+        "fecha_registro": "2025-07-05 14:02:46"
+    },
+    {
+        "codigo": "cb8f7fb0",
+        "empleado": "santiago",
+        "obra": "obra 1",
+        "factura": "cb8f7fb0_factura.jpg",
+        "ubicacion": "cb8f7fb0_ubicacion.jpg",
+        "fecha_registro": "2025-07-05 14:08:05"
+    },
+    {
+        "codigo": "16e003dd",
+        "empleado": "santiago",
+        "obra": "obra 1",
+        "factura": "16e003dd_factura.jpg",
+        "ubicacion": "16e003dd_ubicacion.jpg",
+        "fecha_registro": "2025-07-05 14:23:12"
+    },
+    {
+        "codigo": "3f993908",
+        "empleado": "natalia",
+        "obra": "obra norte",
+        "factura": "3f993908_factura.jpg",
+        "ubicacion": "3f993908_ubicacion.jpg",
+        "fecha_registro": "2025-07-05 14:30:29"
+    },
+    {
+        "codigo": "47dda840",
+        "empleado": "Jesus Rangel ",
+        "obra": "Obra Norte",
+        "factura": "47dda840_factura.jpg",
+        "ubicacion": "47dda840_ubicacion.jpg",
+        "fecha_registro": "2025-07-07 16:49:24"
+    },
+    {
+        "codigo": "eeffc8d9",
+        "empleado": "carlos Morales",
+        "obra": "Obra Norte",
+        "factura": "eeffc8d9_factura.jpg",
+        "ubicacion": "eeffc8d9_ubicacion.jpg",
+        "fecha_registro": "2025-07-07 16:54:47"
+    },
+    {
+        "codigo": "90ed87ab",
+        "empleado": "sara ",
+        "obra": "Obra Norte",
+        "factura": "90ed87ab_factura.jpg",
+        "ubicacion": "90ed87ab_ubicacion.jpg",
+        "fecha_registro": "2025-07-07 18:41:35"
+    }
+]

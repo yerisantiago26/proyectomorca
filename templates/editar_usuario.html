@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>✏️ Editar Usuario</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label>Nombre</label>
+      <input name="nombre" value="{{ usuario[1] }}" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Contraseña</label>
+      <input name="clave" value="{{ usuario[2] }}" type="password" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label>Rol</label>
+      <select name="rol" class="form-select">
+        {% for r in ['admin', 'operador', 'pintura', 'madera', 'pisos'] %}
+        <option value="{{ r }}" {% if usuario[3] == r %}selected{% endif %}>{{ r.title() }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <button class="btn btn-primary">Guardar cambios</button>
+    <a href="{{ url_for('usuarios') }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

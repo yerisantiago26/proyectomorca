@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container py-4">
+  <h2>➕ Registrar Viático</h2>
+  <form method="POST">
+    <div class="mb-3">
+      <label class="form-label">Empleado</label>
+      <select name="empleado" class="form-select" required>
+        {% for e in empleados %}
+        <option value="{{ e[0] }}">{{ e[1] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Obra</label>
+      <select name="obra" class="form-select">
+        {% for o in obras %}
+        <option value="{{ o[0] }}">{{ o[1] }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Concepto</label>
+      <input type="text" name="concepto" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Monto</label>
+      <input type="number" name="monto" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Fecha</label>
+      <input type="date" name="fecha" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Observación</label>
+      <textarea name="observacion" class="form-control" rows="3"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <a href="{{ url_for('ver_viaticos') }}" class="btn btn-secondary">Cancelar</a>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>{{ obra and 'Editar' or 'Nueva' }} Obra</h2>
+<form method="POST">
+    <input type="text" name="nombre" placeholder="Nombre de la obra" class="form-control mb-2" value="{{ obra['nombre'] if obra else '' }}" required>
+    <select name="estado" class="form-control mb-2">
+        <option value="activa" {% if obra and obra['estado']=='activa' %}selected{% endif %}>Activa</option>
+        <option value="inactiva" {% if obra and obra['estado']=='inactiva' %}selected{% endif %}>Inactiva</option>
+    </select>
+    <textarea name="nota" class="form-control mb-2" placeholder="Notas">{{ obra['nota'] if obra else '' }}</textarea>
+    <button class="btn btn-danger">Guardar</button>
+</form>
+{% endblock %}

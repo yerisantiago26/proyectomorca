@@ -1,0 +1,231 @@
+/* ===============================
+   Archivo: static/css/style.css
+   Estilos globales y específicos
+   =============================== */
+
+/* --- Fondo degradado principal (azul → rojo → blanco) --- */
+body {
+  background: linear-gradient(
+    120deg,
+    #151c2f 0%,
+    #151c2f 13%,
+    #b4001e 40%,
+    #fff 99%
+  );
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+/* --- Navbar --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-bottom: 2px solid #d32f2f;
+  padding: 0.5rem 2rem;
+}
+.navbar-logo {
+  display: flex;
+  align-items: center;
+}
+.navbar-logo img {
+  margin-right: 12px;
+}
+.brand {
+  font-size: 2rem;
+  color: #d32f2f;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.navbar-user span {
+  margin-right: 12px;
+  font-size: 1rem;
+  color: #333;
+}
+.navbar-user a {
+  color: #d32f2f;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+.navbar-user a:hover {
+  color: #7b1fa2;
+}
+
+/* --- Contenedor principal --- */
+main, .main {
+  padding: 2rem 0.5rem;
+  min-height: 60vh;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* --- Panel de inicio genérico --- */
+.panel-inicio {
+  text-align: center;
+}
+.botonera {
+  margin: 2rem auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+.btn-main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 220px;
+  min-height: 60px;
+  background: #c62828;
+  color: #fff;
+  font-size: 1.3rem;
+  border-radius: 18px;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+  text-decoration: none;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  cursor: pointer;
+}
+.btn-main:hover {
+  background: #e3343b;
+  box-shadow: 0 6px 20px rgba(195,18,18,0.2);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* --- Login --- */
+.login-container {
+  margin: 3rem auto;
+  max-width: 400px;
+  background: rgba(255,255,255,0.95);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 3px 20px rgba(0,0,0,0.12);
+  text-align: center;
+}
+.login-form input {
+  display: block;
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+}
+.btn-login {
+  width: 100%;
+  background: #c62828;
+  color: #fff;
+  padding: 0.8rem;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-top: 0.8rem;
+  transition: background 0.2s;
+}
+.btn-login:hover {
+  background: #e3343b;
+}
+.slogan {
+  color: #ad1457;
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+}
+.flashes {
+  margin: 1.2rem auto 0.5rem auto;
+  max-width: 380px;
+  color: #c62828;
+  padding: 0.6rem 1rem;
+  background: #ffeaea;
+  border-radius: 8px;
+  font-size: 1rem;
+  list-style: none;
+}
+
+/* --- Animación slide-in --- */
+@keyframes slideInRight {
+  from { transform: translateX(80vw); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+.slide-in-right {
+  animation: slideInRight 0.85s cubic-bezier(.61,-0.08,.38,1.11) both;
+}
+
+/* --- Menú Jefe de Obra --- */
+.fondo-jefe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  width: 100vw;
+}
+.panel-menu-blanco {
+  background: rgba(255,255,255,0.93);
+  border-radius: 28px;
+  box-shadow: 0 10px 40px rgba(183,28,28,0.22), 0 2px 24px rgba(14,12,27,0.14);
+  padding: 2.3rem 2.2rem 2.5rem 2.2rem;
+  max-width: 680px;
+  width: 99vw;
+  text-align: center;
+}
+.titulo-jefe {
+  color: #b71c1c;
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 1.8rem;
+}
+.botonera-jefe {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.1rem 2rem;
+  justify-content: center;
+  margin-top: 2.2rem;
+}
+.btn-menu-jefe {
+  background: linear-gradient(145deg, #ba2323 65%, #b71c1c 100%);
+  border: 2.5px solid #b71c1c;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(183,28,28,0.33), 0 0 32px rgba(183,28,28,0.27), 0 2px 12px rgba(255,255,255,0.33);
+  width: 220px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.27rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.19s, box-shadow 0.16s, transform 0.21s;
+}
+.btn-menu-jefe:hover {
+  background: linear-gradient(135deg, #e14646 80%, #fff 110%);
+  color: #b71c1c;
+  box-shadow: 0 8px 34px rgba(183,28,28,0.27), 0 0 38px rgba(255,255,255,0.26);
+  transform: scale(1.045);
+}
+.icono-boton {
+  font-size: 2.2rem;
+  margin-bottom: 0.7rem;
+  filter: drop-shadow(0 2px 6px rgba(183,28,28,0.33));
+}
+.titulo-boton {
+  font-size: 1.08rem;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 700px) {
+  .panel-menu-blanco { padding: 1.1rem 0.3rem 1.7rem 0.3rem; }
+  .btn-menu-jefe {
+    width: 92vw;
+    height: 70px;
+    font-size: 1.09rem;
+  }
+}

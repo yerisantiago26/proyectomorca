@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<h2>Notificaciones y Observaciones</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Fecha</th>
+            <th>Usuario</th>
+            <th>Rol</th>
+            <th>Obra</th>
+            <th>Área</th>
+            <th>Mensaje</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for n in notificaciones %}
+        <tr>
+            <td>{{ n['fecha'] }}</td>
+            <td>{{ n['usuario'] }}</td>
+            <td>{{ n['rol'] }}</td>
+            <td>{{ n['obra'] }}</td>
+            <td>{{ n['area'] }}</td>
+            <td>{{ n['mensaje'] }}</td>
+            <td>{{ n['estado'] }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

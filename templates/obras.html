@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block contenido %}
+<div class="modulo">
+    <h2>Obras y Lugares</h2>
+    {% if puede_editar %}
+    <a href="{{ url_for('registro_obra') }}" class="btn-main" style="margin-bottom:18px;">➕ Registrar Obra</a>
+    {% endif %}
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+              <a href="{{ url_for('resumen_obra', obra_id=o['id']) }}" class="btn-main btn-sm">Resumen</a>
+
+                <th>Nombre</th>
+                <th>Estado</th>
+                <th>Nota</th>
+                <th>Áreas</th>
+                {% if puede_editar %}<th>Acciones</th>{% endif %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for o in obras %}
+            <tr>
+                <td>{{ o['nombre'] }}</td>
+                <td>{{ o['estado'] }}</td>
+                <td>{{ o['nota'] }}</td>
+                <td>
+                    <a href="{{ url_for('areas_obra', obra_id=o['id']) }}" class="btn-main" style="font-size:0.9rem;">Ver Áreas</a>
+                </td>
+                {% if puede_editar %}
+                <td>
+                    <a href="{{ url_for('editar_obra', id=o['id']) }}" class="btn-main" style="font-size:0.9rem;">Editar</a>
+                </td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
